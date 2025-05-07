@@ -1,9 +1,9 @@
 import React from "react";
-import humble from "../assets/image/humble.png";
-import terry from "../assets/image/terry.png";
-import sharky from "../assets/image/sharky.png";
-import clint from "../assets/image/clint.png";
-import ethan from "../assets/image/ethan.png";
+import humble from "../assets/image/Humble.png";
+import terry from "../assets/image/Terry.png";
+import sharky from "../assets/image/Sharky.png";
+import clint from "../assets/image/Clint.png";
+import ethan from "../assets/image/Ethan.png";
 
 const players = [
   { name: "HUMBLE", image: humble, rotation: "-rotate-[10deg]", z: "z-10" },
