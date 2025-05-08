@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,600;10..48,700&display=swap');
+
+body {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+
+@font-face {
+    font-family: 'DiaClone Regular';
+    src: url('../public/Fonts/Diaclone-1jGRg.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Expanded Regular';
+    src: url('../public/Fonts/DiacloneExpanded-rvgW7.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Halftone Regular';
+    src: url('../public/Fonts/DiacloneHalftone-vnmqA.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Laser Regular';
+    src: url('../public/Fonts/DiacloneLaser-nARdg.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Leftalic Regular';
+    src: url('../public/Fonts/DiacloneLeftalic-R9pGA.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Semi-Italic Regular';
+    src: url('../public/Fonts/DiacloneSemiItalic-8OMdg.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Semi-Leftalic Regular';
+    src: url('../public/Fonts/DiacloneSemiLeftalic-BLWed.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Spaced Regular';
+    src: url('../public/Fonts/DiacloneSpaced-YqzaO.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Spaced Italic Regular';
+    src: url('../public/Fonts/DiacloneSpacedItalic-rvgqy.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Italic Regular';
+    src: url('../public/Fonts/DiacloneItalic-lxg7d.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Halftone Italic Regular';
+    src: url('../public/Fonts/DiacloneHalftoneItalic-vnmqE.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Laser Italic Regular';
+    src: url('../public/Fonts/DiacloneLaserItalic-1jGM2.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Leftalic Italic Regular';
+    src: url('../public/Fonts/DiacloneLeftalicItalic-1jGRg.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Semi-Italic Italic Regular';
+    src: url('../public/Fonts/DiacloneSemiItalicItalic-1jGRg.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Semi-Leftalic Italic Regular';
+    src: url('../public/Fonts/DiacloneSemiLeftalicItalic-1jGRg.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Expanded Italic Regular';
+    src: url('../public/Fonts/DiacloneExpandedItalic-MAV9Y.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone 3D Regular';
+    src: url('../public/Fonts/Diaclone3D-R9p1W.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone 3D Italic Regular';
+    src: url('../public/Fonts/Diaclone3DItalic-BLWOx.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Condensed Regular';
+    src: url('../public/Fonts/DiacloneCondensed-8OM20.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Condensed Italic Regular';
+    src: url('../public/Fonts/DiacloneCondensedItalic-YqzKo.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Gradient Regular';
+    src: url('../public/Fonts/DiacloneGradient-KV7a7.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DiaClone Gradient Italic Regular';
+    src: url('../public/Fonts/DiacloneGradientItalic-2vOKv.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-diacloneRegular {
+    font-family: 'DiaClone Regular', serif;
+}
+.font-diaclone-3d {
+    font-family: 'DiaClone 3D Regular', serif;
+}
+.font-diaclone-3d-italic {
+    font-family: 'DiaClone 3D Italic Regular', serif;
+}
+.font-diaclone-condensed {
+    font-family: 'DiaClone Condensed Regular', serif;
+}
+.font-diaclone-condensed-italic {
+    font-family: 'DiaClone Condensed Italic Regular', serif;
+}
+.font-diaclone-expanded {
+    font-family: 'DiaClone Expanded Regular', serif;
+}
+.font-diaclone-expanded-italic {
+    font-family: 'DiaClone Expanded Italic Regular', serif;
+}
+.font-diaclone-italic {
+    font-family: 'DiaClone Italic Regular', serif;
+}
+.font-diaclone-gradient {
+    font-family: 'DiaClone Gradient Regular', serif;
+}
+.font-diaclone-gradient-italic {
+    font-family: 'DiaClone Gradient Italic Regular', serif;
+}
+.font-diaclone-halftone {
+    font-family: 'DiaClone Halftone Regular', serif;
+}
+.font-diaclone-halftone-italic {
+    font-family: 'DiaClone Halftone Italic Regular', serif;
+}
+.font-diaclone-laser {
+    font-family: 'DiaClone Laser Regular', serif;
+}
+.font-diaclone-laser-italic {
+    font-family: 'DiaClone Laser Italic Regular', serif;
+}
+.font-diaclone-leftalic {
+    font-family: 'DiaClone Leftalic Regular', serif;
+}
+.font-diaclone-semi-italic {
+    font-family: 'DiaClone Semi-Italic Regular', serif;
+}
+.font-diaclone-semi-leftalic {
+    font-family: 'DiaClone Semi-Leftalic Regular', serif;
+}
+.font-diaclone-spaced {
+    font-family: 'DiaClone Spaced Regular', serif;
+}
+.font-diaclone-spaced-italic {
+    font-family: 'DiaClone Spaced Italic Regular', serif;
+}
