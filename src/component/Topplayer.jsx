@@ -9,7 +9,7 @@ const PrevArrow = ({ onClick }) => (
   <TfiArrowCircleLeft
     size={30}
     onClick={onClick}
-    className="absolute left-[-3rem] top-1/2 transform -translate-y-1/2 cursor-pointer text-white z-10"
+    className="absolute left-[-2rem] md:left-[-3rem] top-1/2 transform -translate-y-1/2 cursor-pointer text-white z-10"
   />
 );
 
@@ -17,7 +17,7 @@ const NextArrow = ({ onClick }) => (
   <TfiArrowCircleRight
     size={30}
     onClick={onClick}
-    className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2 cursor-pointer text-white z-10"
+    className="absolute right-[-2rem] md:right-[-3rem] top-1/2 transform -translate-y-1/2 cursor-pointer text-white z-10"
   />
 );
 
