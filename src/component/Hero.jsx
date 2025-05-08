@@ -7,6 +7,7 @@ import MarqueeBanner from "./MarqueeBanner";
 import StackedCards from "./StackedCards";
 import PlayerCards from "./PlayerCards";
 
+
 const Hero = () => {
   const [step, setStep] = useState(0);
 
@@ -18,7 +19,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black text-white">
+    <div className=" border-10 border-[#06FF8B] relative min-h-screen bg-black text-white">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-70"
@@ -55,7 +56,7 @@ const Hero = () => {
           </div>
         </main>
 
-        <MarqueeBanner />
+        <MarqueeBanner /> 
       </div>
     </div>
   );
