@@ -15,7 +15,7 @@ const StackedCards = () => {
   useEffect(() => {
     // Adjust number of visible cards based on screen width
     const updateCardCount = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 900) {
         setCards(fullCards.slice(-3)); // Show last 3 cards for small screens
       } else {
         setCards(fullCards);
@@ -62,7 +62,7 @@ const StackedCards = () => {
   }, [controls, cards]);
 
   return (
-    <div className="relative mx-auto w-[180px] h-[220px] sm:w-[200px] sm:h-[250px] md:w-[240px] md:h-[300px] lg:w-[280px] lg:h-[350px]">
+    <div className="flex justify-center items-center relative mx-80 w-[180px] h-[220px] sm:w-[200px] sm:h-[250px] md:w-[240px] md:h-[300px] lg:w-[280px] lg:h-[350px]">
       {cards.map((src, i) => (
         <motion.img
           key={i}
@@ -70,7 +70,7 @@ const StackedCards = () => {
           custom={i}
           initial={{ y: 100, opacity: 0, x: 0, rotate: 0 }}
           animate={controls}
-          className="absolute top-0 left-0 w-full h-auto sm:ml-20 max-w-[80%] sm:max-w-[85%] md:max-w-full rounded-lg shadow-xl object-contain"
+          className="absolute top-0 left-0 w-full h-auto max-w-[80%] sm:max-w-[85%] md:max-w-full rounded-lg shadow-xl object-contain"
           style={{ zIndex: i }}
         />
       ))}
