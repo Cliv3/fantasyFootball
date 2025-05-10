@@ -13,16 +13,16 @@ const StackedCards = () => {
   const [cards, setCards] = useState(fullCards);
 
   useEffect(() => {
-    // Responsively trim the card list to 3 if screen is below 768px
+    // Adjust number of visible cards based on screen width
     const updateCardCount = () => {
       if (window.innerWidth < 768) {
-        setCards(fullCards.slice(-3)); // Show last 3 cards (front-most)
+        setCards(fullCards.slice(-3)); // Show last 3 cards for small screens
       } else {
         setCards(fullCards);
       }
     };
 
-    updateCardCount(); // initial
+    updateCardCount();
     window.addEventListener("resize", updateCardCount);
     return () => window.removeEventListener("resize", updateCardCount);
   }, []);
@@ -40,7 +40,7 @@ const StackedCards = () => {
           const centerIndex = cards.length - 1;
           const offset = centerIndex - i;
           const direction = offset % 2 === 0 ? 1 : -1;
-          const spreadDistance = Math.ceil(offset / 1) * 110 * direction; // tighter on small screens
+          const spreadDistance = Math.ceil(offset / 2) * 120 * direction;
           const rotate = Math.ceil(offset / 2) * 6 * direction;
           const vertical = Math.abs(offset) * 8;
 
@@ -62,7 +62,7 @@ const StackedCards = () => {
   }, [controls, cards]);
 
   return (
-    <div className="relative mx-auto w-[250px] h-[320px] sm:w-[280px] sm:h-[350px] md:w-[300px] md:h-[380px] lg:w-[320px] lg:h-[400px]">
+    <div className="relative mx-auto w-[180px] h-[220px] sm:w-[200px] sm:h-[250px] md:w-[240px] md:h-[300px] lg:w-[280px] lg:h-[350px]">
       {cards.map((src, i) => (
         <motion.img
           key={i}
@@ -70,7 +70,7 @@ const StackedCards = () => {
           custom={i}
           initial={{ y: 100, opacity: 0, x: 0, rotate: 0 }}
           animate={controls}
-          className="absolute top-0 left-0 w-full h-auto rounded-lg shadow-xl object-contain"
+          className="absolute top-0 left-0 w-full h-auto sm:ml-20 max-w-[80%] sm:max-w-[85%] md:max-w-full rounded-lg shadow-xl object-contain"
           style={{ zIndex: i }}
         />
       ))}
