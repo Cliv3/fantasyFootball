@@ -57,11 +57,11 @@ const Topplayer = () => {
   return (
     <section className="bg-black px-4 text-white relative">
       <div className="flex justify-center items-center text-center mb-8 relative z-10">
-        <h2 className="flex justify-center items-center text-6xl md:text-[150px] lg:text-[250px] font-diaclone-3d opacity-5 uppercase leading-none">
+        <h2 className="flex justify-center items-center text-7xl md:text-[150px] lg:text-[150px] font-diaclone-3d opacity-5 uppercase leading-none">
           Meet the best
         </h2>
         <h3 className=" bg-black shadow-black  text-white mb-4 text-[24px] top-10 md:text-[40px] 
-        lg:text-[60px] font-diacloneRegular uppercase absolute md:top-20 lg:top-36 tracking-wider">
+        lg:text-[60px] font-diacloneRegular uppercase absolute md:top-20 lg:top-26 tracking-wider">
           ★ Top Players ★
         </h3>
       </div>
@@ -132,7 +132,7 @@ const Topplayer = () => {
         </Slider>
       </div>
 
-      <h2 className="flex justify-center items-center text-6xl md:text-[150px] lg:text-[250px] font-diaclone-3d opacity-5 uppercase leading-none">
+      <h2 className="flex justify-center items-center text-7xl md:text-[70px] lg:text-[150px] font-diaclone-3d opacity-5 uppercase leading-none">
         Of the best
       </h2>
     </section>
