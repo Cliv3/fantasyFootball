@@ -1,53 +1,80 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import Humble from "../assets/image/Humble.png";
-import Sharky from "../assets/image/Sharky.png";
-import Terry from "../assets/image/Terry.png";
-import Clint from "../assets/image/Clint.png";
-import Ethan from "../assets/image/Ethan.png";
+import Humble from "../assets/image/Humble1.png";
+import Sharky from "../assets/image/Sharky2.png";
+import Terry from "../assets/image/Terry1.png";
+import Clint from "../assets/image/Clint1.png";
+import Ethan from "../assets/image/Ethan1.png";
 
-const cards = [Humble, Sharky, Terry, Clint, Ethan];
+const fullCards = [Ethan, Clint, Humble, Terry, Sharky];
 
 const StackedCards = () => {
   const controls = useAnimation();
+  const [cards, setCards] = useState(fullCards);
+
+  useEffect(() => {
+    // Responsively trim the card list to 3 if screen is below 768px
+    const updateCardCount = () => {
+      if (window.innerWidth < 768) {
+        setCards(fullCards.slice(-3)); // Show last 3 cards (front-most)
+      } else {
+        setCards(fullCards);
+      }
+    };
+
+    updateCardCount(); // initial
+    window.addEventListener("resize", updateCardCount);
+    return () => window.removeEventListener("resize", updateCardCount);
+  }, []);
 
   useEffect(() => {
     async function runAnimation() {
-      // Step 1: Slide in from bottom
       await controls.start({
         y: 0,
         opacity: 1,
-        transition: { duration: 1, ease: "easeOut" },
+        transition: { duration: 1.2, ease: "easeOut" },
       });
 
-      // Step 2: Spread out
-      controls.start((i) => ({
-        x: i * 4,
-        y: i * 4,
-        rotate: i * 2,
-        transition: { duration: 0.8, delay: i * 0.1 },
-      }));
+      setTimeout(() => {
+        controls.start((i) => {
+          const centerIndex = cards.length - 1;
+          const offset = centerIndex - i;
+          const direction = offset % 2 === 0 ? 1 : -1;
+          const spreadDistance = Math.ceil(offset / 1) * 110 * direction; // tighter on small screens
+          const rotate = Math.ceil(offset / 2) * 6 * direction;
+          const vertical = Math.abs(offset) * 8;
+
+          return {
+            x: offset === 0 ? 0 : spreadDistance,
+            y: vertical,
+            rotate: offset === 0 ? 0 : rotate,
+            transition: {
+              duration: 0.8,
+              ease: "easeInOut",
+              delay: i * 0.1,
+            },
+          };
+        });
+      }, 5000);
     }
 
     runAnimation();
-  }, [controls]);
+  }, [controls, cards]);
 
   return (
-    <motion.div
-      initial={{ y: 100, opacity: 0 }}
-      animate={controls}
-      className="relative w-[180px] h-[260px] mx-auto"
-    >
+    <div className="relative mx-auto w-[250px] h-[320px] sm:w-[280px] sm:h-[350px] md:w-[300px] md:h-[380px] lg:w-[320px] lg:h-[400px]">
       {cards.map((src, i) => (
         <motion.img
           key={i}
           src={src}
           custom={i}
-          className="absolute top-0 left-0 w-full rounded-lg shadow-lg"
-          style={{ zIndex: cards.length - i }}
+          initial={{ y: 100, opacity: 0, x: 0, rotate: 0 }}
+          animate={controls}
+          className="absolute top-0 left-0 w-full h-auto rounded-lg shadow-xl object-contain"
+          style={{ zIndex: i }}
         />
       ))}
-    </motion.div>
+    </div>
   );
 };
 

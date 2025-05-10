@@ -1,114 +1,96 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaUserCircle } from "react-icons/fa";
 import { RiFootballLine } from "react-icons/ri";
 
 const Pickyoursquad = () => {
-  const [expanded, setExpanded] = useState(false);
-  const [centerX, setCenterX] = useState(0);
-  const containerRef = useRef(null);
+  const [step, setStep] = useState(0);
 
-  // Toggle expansion
+  // Control the looped steps
   useEffect(() => {
-    const interval = setInterval(() => {
-      setExpanded((prev) => !prev);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    let timeouts = [];
 
-  // Calculate centerX dynamically from container width
-  useEffect(() => {
-    const updateCenterX = () => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        setCenterX(rect.width / 2);
-      }
-    };
+    // Step 0: Reset
+    if (step === 0) {
+      timeouts.push(setTimeout(() => setStep(1), 500)); // Ball drop
+    }
 
-    updateCenterX();
-    window.addEventListener("resize", updateCenterX);
-    return () => window.removeEventListener("resize", updateCenterX);
-  }, []);
+    // Step 1: Ball dropped, show users
+    if (step === 1) {
+      timeouts.push(setTimeout(() => setStep(2), 2500)); // Show users
+    }
 
-  const userVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0,
-    },
-    visible: (i) => ({
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 500,
-        damping: 20,
-        delay: 0.05 * i,
-      },
-    }),
-    exit: {
-      opacity: 0,
-      scale: 0,
-      transition: { duration: 0.3 },
-    },
-  };
+    // Step 2: All shown, wait before reset
+    if (step === 2) {
+      timeouts.push(setTimeout(() => setStep(0), 3000)); // Restart
+    }
 
-  const radius = 80;
-  const centerY = expanded ? 100 : 80;
-  const userCount = 6;
-
-  const userPositions = Array.from({ length: userCount }, (_, i) => {
-    const angle = (i / userCount) * 2 * Math.PI;
-    const x = centerX + radius * Math.cos(angle);
-    const y = centerY + radius * Math.sin(angle);
-    return { left: x, top: y };
-  });
+    return () => timeouts.forEach(clearTimeout);
+  }, [step]);
 
   return (
-    <motion.div
-      ref={containerRef}
-      className="bg-[#090909] flex justify-center p-6 rounded-lg text-center w-full max-w-md mx-auto relative h-[320px]"
-      initial={{ scale: 1 }}
-      whileHover={{ scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300 }}
-    >
-      {/* Center Icon */}
-      <motion.div
-        className="absolute left-1/2 transform -translate-x-1/2 z-10"
-        animate={{ top: expanded ? 100 : 80 }}
-        transition={{ type: "spring", stiffness: 500 }}
-      >
-        <div className="bg-gray-700 h-8 w-8 rounded-full flex items-center justify-center">
-          <RiFootballLine className="text-white" />
-        </div>
-      </motion.div>
+    <div className="bg-[#090909] flex flex-col items-center justify-center text-center p-6 rounded-lg w-full max-w-md mx-auto relative h-[320px] overflow-hidden">
+      
+      {/* Ball Icon Animation */}
+      <AnimatePresence>
+        {step >= 1 && (
+          <motion.div
+            key="ball"
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-6"
+          >
+            <div className="bg-gray-800 h-10 w-10 rounded-full flex items-center justify-center">
+              <RiFootballLine className="text-white text-lg" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* User Icons Around the Ball */}
-      <div className="absolute inset-0">
-        <AnimatePresence>
-          {expanded &&
-            userPositions.map((pos, i) => (
+      {/* User Icons - 2 rows of 3 */}
+      <AnimatePresence>
+        {step === 2 && (
+          <motion.div
+            key="users"
+            className="grid grid-cols-3 gap-14 mb-4"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.15,
+                },
+              },
+            }}
+          >
+            {Array.from({ length: 6 }).map((_, i) => (
               <motion.div
                 key={i}
-                style={{
-                  top: pos.top,
-                  left: pos.left,
-                  position: "absolute",
-                  transform: "translate(-50%, -50%)",
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.4,
+                      ease: "easeOut",
+                    },
+                  },
                 }}
-                custom={i}
-                variants={userVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
               >
-                <FaUserCircle className="text-green-400 text-xl" />
+                <FaUserCircle className="text-green-400 text-2xl" />
               </motion.div>
             ))}
-        </AnimatePresence>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Title & Description */}
-      <div className="absolute bottom-6 w-full text-center px-4">
+      {/* Text */}
+      <div className="text-center absolute bottom-6 w-full px-4">
         <h3 className="text-xl font-semibold text-white">Pick Your Squad</h3>
         <p className="text-gray-400 text-[12px] mt-1 leading-relaxed">
           Build your dream team by handpicking top ballers
@@ -116,7 +98,7 @@ const Pickyoursquad = () => {
           for your ultimate fantasy league squad!
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

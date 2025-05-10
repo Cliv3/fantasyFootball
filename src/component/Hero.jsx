@@ -9,14 +9,14 @@ import PlayerCards from "./PlayerCards";
 
 
 const Hero = () => {
-  const [step, setStep] = useState(0);
+  // const [step, setStep] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStep((prev) => (prev < 2 ? prev + 1 : 2));
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setStep((prev) => (prev < 2 ? prev + 1 : 2));
+  //   }, 4000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div className=" border-10 border-[#06FF8B] relative min-h-screen bg-black text-white">
@@ -37,12 +37,12 @@ const Hero = () => {
           <h1 className="text-5xl md:text-[96px] font-diacloneRegular leading-tight mb-4">
             OWN YOUR OWN BALLER LEAGUE
           </h1>
-          <p className="text-md md:text-xl mb-4">
+          <p className="text-md md:text-xl mb-6">
             Join the experience and become the manager of your very own ballers league team
           </p>
 
-          {step === 1 && <StackedCards />}
-          {step === 2 && <PlayerCards />}
+          <StackedCards />
+          {/* {step === 2 && <PlayerCards />} */}
 
           <div className="flex gap-4 justify-center items-center mt-8 mb-4">
             <button className="bg-white text-[10px] md:text-[24px] text-black py-3 px-4 md:py-3 md:px-8 flex gap-2 items-center justify-center">
@@ -56,7 +56,9 @@ const Hero = () => {
           </div>
         </main>
 
+        <div className="mt-10">
         <MarqueeBanner /> 
+        </div>
       </div>
     </div>
   );
