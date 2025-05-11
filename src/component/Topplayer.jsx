@@ -62,7 +62,7 @@ const Topplayer = () => {
         </h2>
         <h3 className=" bg-black shadow-black  text-white mb-4 text-[24px] top-10 md:text-[40px] 
         lg:text-[60px] font-diacloneRegular uppercase absolute md:top-20 lg:top-26 tracking-wider">
-          ★ Top Players ★
+          ★ Players ★
         </h3>
       </div>
 
@@ -110,13 +110,13 @@ const Topplayer = () => {
                   </div>
                 </div>
                 <div className="flex justify-between text-sm mb-3">
-                  <p>£{player.price || "0"}</p>
+                  {/* <p>£{player.price || "0"}</p>
                   <div className="text-right">
                     <p className="text-xs text-gray-400">Fantasy Pts</p>
                     <p className="text-green-500 text-lg font-bold">
                       {player.fantasy_points || 0}
                     </p>
-                  </div>
+                  </div> */}
                 </div>
                 <a
                   href={player.player_url}

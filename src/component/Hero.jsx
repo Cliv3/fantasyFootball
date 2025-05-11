@@ -34,7 +34,7 @@ const Hero = () => {
         {/* Main Content */}
         <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
           <h1 className="text-5xl md:text-[96px] font-diacloneRegular leading-tight mb-4">
-            OWN YOUR OWN BALLER LEAGUE
+            OWN YOUR OWN BALLER LEAGUE TEAM
           </h1>
           <p className="text-md md:text-xl mb-6">
             Join the experience and become the manager of your very own ballers league team
