@@ -5,7 +5,6 @@ import logoImage from "../assets/image/Logo.png";
 import backgroundImage from "../assets/image/backgroundImage.png";
 import MarqueeBanner from "./MarqueeBanner";
 import StackedCards from "./StackedCards";
-import PlayerCards from "./PlayerCards";
 
 
 const Hero = () => {

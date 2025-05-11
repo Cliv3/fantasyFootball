@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import Humble from "../assets/image/Humble1.png";
+import Lineker from "../assets/image/Lineker.png";
 import Sharky from "../assets/image/Sharky2.png";
 import Terry from "../assets/image/Terry1.png";
 import Clint from "../assets/image/Clint1.png";
-import Ethan from "../assets/image/Ethan1.png";
+import Miniminter from "../assets/image/Miniminter.png";
 
-const fullCards = [Ethan, Clint, Humble, Terry, Sharky];
+const fullCards = [Clint, Miniminter, Lineker, Terry, Sharky];
 
 const StackedCards = () => {
   const controls = useAnimation();
   const [cards, setCards] = useState(fullCards);
 
   useEffect(() => {
-    // Adjust number of visible cards based on screen width
     const updateCardCount = () => {
       if (window.innerWidth < 900) {
-        setCards(fullCards.slice(-3)); // Show last 3 cards for small screens
+        setCards(fullCards.slice(-3)); // Last 3 for smaller screens
       } else {
         setCards(fullCards);
       }
@@ -36,11 +35,14 @@ const StackedCards = () => {
       });
 
       setTimeout(() => {
+        const isMobile = window.innerWidth < 900;
+        const spreadBase = isMobile ? 120 : 180;
+
         controls.start((i) => {
           const centerIndex = cards.length - 1;
           const offset = centerIndex - i;
           const direction = offset % 2 === 0 ? 1 : -1;
-          const spreadDistance = Math.ceil(offset / 2) * 120 * direction;
+          const spreadDistance = Math.ceil(offset / 2) * spreadBase * direction;
           const rotate = Math.ceil(offset / 2) * 6 * direction;
           const vertical = Math.abs(offset) * 8;
 
