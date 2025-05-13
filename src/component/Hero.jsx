@@ -55,7 +55,7 @@ const Hero = () => {
           </div>
         </main>
 
-        <div className="mt-10">
+        <div className="">
         <MarqueeBanner /> 
         </div>
       </div>
