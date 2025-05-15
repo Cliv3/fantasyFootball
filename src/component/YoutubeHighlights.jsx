@@ -29,11 +29,12 @@ const YoutubeHighlights = () => {
       <h2 className="text-white text-2xl font-diacloneRegular tracking-widest text-center mb-10 flex items-center justify-center gap-3">
         <span>★</span> HIGHLIGHTS <span>★</span>
       </h2>
-      <div className="flex flex-wrap justify-center gap-5 px-4">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 max-w-6xl mx-auto">
         {videos.map((video, index) => (
           <div
             key={video.id.videoId}
-            className="w-[320px] bg-[#111] text-white shadow-md rounded overflow-hidden"
+            className="bg-[#111] text-white shadow-md rounded overflow-hidden"
           >
             <div className="relative">
               <img
