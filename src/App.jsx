@@ -11,7 +11,7 @@ const App = () => {
     <div>
       <Hero />
       <Howtoplay />
-      {/* <Topplayer /> */}
+      <Topplayer />
       <YoutubeHighlights />
       <Footer />
     </div>
