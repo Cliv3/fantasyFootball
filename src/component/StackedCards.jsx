@@ -57,7 +57,7 @@ const StackedCards = () => {
             },
           };
         });
-      }, 1000);
+      }, );
     }
 
     runAnimation();
