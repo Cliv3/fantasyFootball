@@ -6,11 +6,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Import player images
-import playerImg1 from "../assets/image/playerImg1.png";
-import playerImg2 from "../assets/image/playerImg2.png";
-import playerImg3 from "../assets/image/playerImg3.png";
-import playerImg4 from "../assets/image/playerImg4.png";
-import playerImg5 from "../assets/image/playerImg5.png";
+import Max from "../assets/image/Max.png";
+import Remy from "../assets/image/Remy.png";
+import Micheal from "../assets/image/Micheal.png";
+import Kadell from "../assets/image/Kadell.png";
+import Medy from "../assets/image/Medy.png";
+import Mohammed from "../assets/image/Mohammed.png";
+import Henry from "../assets/image/Henry.png";
+import Harry from "../assets/image/Harry.png";
+import Pique from "../assets/image/Pique.png";
+import Tyler from "../assets/image/Tyler.png";
+import Daniel from "../assets/image/Daniel.png";
+
+
 
 const PrevArrow = ({ onClick }) => (
   <TfiArrowCircleLeft
@@ -30,54 +38,114 @@ const NextArrow = ({ onClick }) => (
 
 const players = [
   {
-    name: "Marcus Rashford",
-    position: "Forward",
-    apps: 28,
-    goals: 14,
-    assists: 6,
-    price: "£9.0M",
-    fantasyPoints: 98,
-    image: playerImg2,
-  },
-  {
-    name: "Bruno Fernandes",
-    position: "Midfielder",
-    apps: 30,
-    goals: 10,
-    assists: 9,
-    price: "£10.5M",
-    fantasyPoints: 110,
-    image: playerImg3,
-  },
-  {
-    name: "Lisandro Martinez",
-    position: "Defender",
-    apps: 25,
+    name: "Max Pitman",
+    position: "Goalkeeper",
+    apps: 8,
     goals: 2,
     assists: 1,
-    price: "£5.0M",
-    fantasyPoints: 72,
-    image: playerImg5,
+    price: "£9.0M",
+    fantasyPoints: 1,
+    image: Max
   },
   {
-    name: "André Onana",
-    position: "Goalkeeper",
-    apps: 32,
+    name: "Micheal Heactor",
+    position: "Defender",
+    apps: 3,
+    goals: 0,
+    assists: 2,
+    price: "£10.5M",
+    fantasyPoints: 3,
+    image: Micheal,
+  },
+  {
+    name: "Remy Clerima",
+    position: "Defender",
+    apps: 5,
+    goals: 2,
+    assists: 3,
+    price: "£5.0M",
+    fantasyPoints: 20,
+    image: Remy,
+  },
+  {
+    name: "Kadell Daniel",
+    position: "Striker",
+    apps: 0,
     goals: 0,
     assists: 0,
     price: "£5.5M",
-    fantasyPoints: 84,
-    image: playerImg4,
+    fantasyPoints: 45,
+    image: Kadell,
   },
   {
-    name: "Casemiro",
-    position: "Midfielder",
-    apps: 27,
+    name: "Mohammed Mayhoub",
+    position: "Striker",
+    apps: 5,
     goals: 3,
-    assists: 4,
+    assists: 1,
     price: "£6.5M",
-    fantasyPoints: 77,
-    image: playerImg1
+    fantasyPoints: 11,
+    image: Mohammed,
+  },
+  {
+    name: "Medy Elito",
+    position: "Midfielder",
+    apps: 7,
+    goals: 0,
+    assists: 2,
+    price: "£6.5M",
+    fantasyPoints: 10,
+    image: Medy,
+  },
+  {
+    name: "Harry Cain",
+    position: "Midfielder",
+    apps: 5,
+    goals: 4,
+    assists: 2,
+    price: "£6.5M",
+    fantasyPoints: 7,
+    image: Harry,
+  },
+  {
+    name: "Pique Humble",
+    position: "Defender",
+    apps: 7,
+    goals: 6,
+    assists: 2,
+    price: "£6.5M",
+    fantasyPoints: 17,
+    image: Pique,
+  },
+  {
+    name: "Henry Ochieng",
+    position: "Midfielder",
+    apps: 8,
+    goals: 2,
+    assists: 2,
+    price: "£6.5M",
+    fantasyPoints: 4,
+    image: Henry,
+  },
+  {
+    name: "Tyler Winters",
+    position: "Striker",
+    apps: 8,
+    goals: 11,
+    assists: 3,
+    price: "£6.5M",
+    fantasyPoints: 99,
+    image: Tyler,
+  },
+  {
+    name: "Daniel Thompson",
+    position: "Striker",
+    apps: 4,
+    goals: 0,
+    assists: 2,
+    price: "£6.5M",
+    fantasyPoints: 36,
+    image: Daniel,
   },
 ];
 
