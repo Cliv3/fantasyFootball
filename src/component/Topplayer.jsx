@@ -204,7 +204,7 @@ const Topplayer = () => {
                   <img
                     src={player.image}
                     alt={player.name}
-                    className="w-24 h-24 object-contain transition-transform duration-300 hover:scale-105"
+                    className="w-40 h-40 object-contain transition-transform duration-300 hover:scale-105"
                   />
                 </div>
                 <div className="grid grid-cols-3 text-center mb-4 gap-2">
