@@ -15,7 +15,7 @@ const StackedCards = () => {
   useEffect(() => {
     const updateCardCount = () => {
       if (window.innerWidth < 900) {
-        setCards(fullCards.slice(-3)); // Show last 3 on small screens
+        setCards(fullCards.slice(-3)); // Show last 3 on smaller screens
       } else {
         setCards(fullCards);
       }
@@ -36,7 +36,7 @@ const StackedCards = () => {
 
       setTimeout(() => {
         const isMobile = window.innerWidth < 900;
-        const spreadBase = isMobile ? 120 : 180;
+        const spreadBase = isMobile ? 100 : 180;
 
         controls.start((i) => {
           const centerIndex = cards.length - 1;
@@ -57,15 +57,15 @@ const StackedCards = () => {
             },
           };
         });
-      }, );
+      }, 0);
     }
 
     runAnimation();
   }, [controls, cards]);
 
   return (
-    <div className="flex justify-center items-center w-full">
-      <div className="relative w-[180px] h-[220px] sm:w-[200px] sm:h-[250px] md:w-[240px] md:h-[300px] lg:w-[280px] lg:h-[350px]">
+    <div className="flex justify-center items-center w-full mt-6">
+      <div className="relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[440px] lg:max-w-[500px] h-auto min-h-[240px] mx-auto">
         {cards.map((src, i) => (
           <motion.img
             key={i}
@@ -73,8 +73,13 @@ const StackedCards = () => {
             custom={i}
             initial={{ y: 100, opacity: 0, x: 0, rotate: 0 }}
             animate={controls}
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-auto max-w-[80%] sm:max-w-[85%] md:max-w-full rounded-lg shadow-xl object-contain"
-            style={{ zIndex: i }}
+            className="absolute top-0 left-1/2 -translate-x-1/2 rounded-lg shadow-xl object-contain"
+            style={{
+              zIndex: i,
+              width: "70vw",        // Responsive width
+              maxWidth: "200px",    // Cap on large screens
+              height: "auto",
+            }}
           />
         ))}
       </div>

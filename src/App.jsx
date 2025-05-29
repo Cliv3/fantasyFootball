@@ -8,7 +8,7 @@ import Footer from './component/Footer.jsx'
 
 const App = () => {
   return (
-    <div>
+    <div className='over'>
       <Hero />
       <Howtoplay />
       <Topplayer />

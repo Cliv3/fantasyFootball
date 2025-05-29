@@ -18,7 +18,7 @@ const Hero = () => {
   // }, []);
 
   return (
-    <div className=" border-10 border-[#06FF8B] relative min-h-screen bg-black text-white">
+    <div className=" border-10 border-[#06FF8B] relative min-h-screen bg-black text-white overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-70"
