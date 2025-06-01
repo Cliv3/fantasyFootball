@@ -44,13 +44,13 @@ const Hero = () => {
           {/* {step === 2 && <PlayerCards />} */}
 
           <div className="flex gap-4 justify-center items-center mt-8 mb-4">
-            <button className="bg-white text-[10px] md:text-[24px] text-black py-3 px-4 md:py-3 md:px-8 flex gap-2 items-center justify-center">
+            <button className="bg-white text-[10px] md:text-[24px] text-black py-3 px-4 md:py-3 md:px-8 flex gap-2 items-center justify-center rounded-md">
               <IoLogoGooglePlaystore size={20} />
-              Get From PlayStore
+              Get On PlayStore
             </button>
-            <button className="bg-[#06FF8B] text-[12px] md:text-[24px] text-black py-3 px-4 md:py-3 md:px-8 flex gap-2 items-center justify-center">
+            <button className="bg-[#06FF8B] text-[12px] md:text-[24px] text-black py-3 px-4 md:py-3 md:px-8 flex gap-2 items-center justify-center rounded-md">
               <IoIosAppstore size={20} />
-              Get From AppStore
+              Get On AppStore
             </button>
           </div>
         </main>
