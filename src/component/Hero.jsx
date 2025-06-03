@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { IoIosAppstore } from "react-icons/io";
 import logoImage from "../assets/image/Logo.png";
-import backgroundImage from "../assets/image/backgroundImage.png";
+// import backgroundImage from "../assets/image/backgroundImage.png";
+import backgroundImage from "../assets/image/stadium.jpg";
 import MarqueeBanner from "./MarqueeBanner";
 import StackedCards from "./StackedCards";
 
@@ -36,7 +37,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-[96px] font-diacloneRegular leading-tight mb-4">
             OWN YOUR OWN BALLER LEAGUE TEAM
           </h1>
-          <p className="text-md md:text-xl mb-6">
+          <p className="text-md md:text-xl mb-6 mt-[-20px]">
             Join the experience and become the manager of your very own ballers league team
           </p>
 
@@ -44,7 +45,7 @@ const Hero = () => {
           {/* {step === 2 && <PlayerCards />} */}
 
           <div className="flex gap-4 justify-center items-center mt-8 mb-4">
-            <button className="bg-white text-[10px] md:text-[24px] text-black py-3 px-4 md:py-3 md:px-8 flex gap-2 items-center justify-center rounded-md">
+            <button className="bg-white text-[12px] md:text-[24px] text-black py-3 px-4 md:py-3 md:px-8 flex gap-2 items-center justify-center rounded-md">
               <IoLogoGooglePlaystore size={20} />
               Get On PlayStore
             </button>
@@ -55,8 +56,8 @@ const Hero = () => {
           </div>
         </main>
 
-        <div className="">
-        <MarqueeBanner /> 
+        <div>
+          <MarqueeBanner />
         </div>
       </div>
     </div>

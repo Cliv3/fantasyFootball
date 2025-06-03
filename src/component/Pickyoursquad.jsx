@@ -29,7 +29,8 @@ const Pickyoursquad = () => {
   }, [step]);
 
   return (
-    <div className="bg-[#090909] flex flex-col items-center justify-center text-center p-6 rounded-lg w-full max-w-md mx-auto relative h-[320px] overflow-hidden">
+    <div className="bg-[#090909] flex flex-col items-center justify-center text-center
+     p-6 rounded-lg w-full max-w-md mx-auto relative h-[320px] overflow-hidden">
       
       {/* Ball Icon Animation */}
       <AnimatePresence>
@@ -54,7 +55,7 @@ const Pickyoursquad = () => {
         {step === 2 && (
           <motion.div
             key="users"
-            className="grid grid-cols-3 gap-14 mb-4"
+            className="grid grid-cols-3 gap-10 mb-6"
             initial="hidden"
             animate="visible"
             exit="hidden"
