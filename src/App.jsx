@@ -1,20 +1,22 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// src/App.jsx
+import React from 'react';
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home"
-import TermsAndCondition from "./pages/TermsAndCondtion";
-import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndCondition from "./pages/TermsAndCondtion"
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ScrollToTop from './component/ScrollToTop';
 
-const App = () => {
+function App()  {
   return (
-    <Router>
+    <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/termsandcondition" element={<TermsAndCondition />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-        {/* other routes */}
       </Routes>
-   </Router>
-  )
+      </>
+  );
 }
 
-export default App
+export default App;

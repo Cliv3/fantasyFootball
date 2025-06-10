@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -58,8 +59,8 @@ const Footer = () => {
         purpose of gameplay.
       </p>
       <div className="flex justify-center items-center gap-4 text-xs underline mt-2 cursor-pointer">
-        <p><a href="/termsandcondition">T&C</a></p>
-        <p><a href="/privacypolicy">Privacy Policy</a></p>
+        <p><Link to="/termsandcondition">T&C</Link></p>
+        <p><Link to="/privacypolicy">Privacy Policy</Link></p>
       </div>
     </footer>
   );
