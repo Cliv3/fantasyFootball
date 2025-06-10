@@ -1,20 +1,19 @@
 import React from 'react'
-import Hero from './component/Hero.jsx'
-import Howtoplay from './component/Howtoplay.jsx'
-import Topplayer from './component/Topplayer.jsx'
-import YoutubeHighlights from './component/YoutubeHighlights.jsx'
-import Footer from './component/Footer.jsx'
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home"
+import TermsAndCondition from "./pages/TermsAndCondtion";
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 const App = () => {
   return (
-    <div className='over'>
-      <Hero />
-      <Howtoplay />
-      <Topplayer />
-      {/* <YoutubeHighlights /> */}
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/termsandcondition" element={<TermsAndCondition />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        {/* other routes */}
+      </Routes>
+   </Router>
   )
 }
 

@@ -57,6 +57,10 @@ const Footer = () => {
         statistics used are based on publicly available information and are used purely for the
         purpose of gameplay.
       </p>
+      <div className="flex justify-center items-center gap-4 text-xs underline mt-2 cursor-pointer">
+        <p><a href="/termsandcondition">Terms and Conditions</a></p>
+        <p><a href="/privacypolicy">Privacy Policy</a></p>
+      </div>
     </footer>
   );
 };
