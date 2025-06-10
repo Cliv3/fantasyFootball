@@ -1,6 +1,8 @@
 import React from "react";
 import Footer from "../component/Footer";
 import logoImage from "../assets/image/Logo.png";
+import { FaEnvelope } from "react-icons/fa6";
+
 
 const PrivacyPolicy = () => {
   return (
@@ -76,7 +78,10 @@ const PrivacyPolicy = () => {
         <p className="mt-2">
           To make any of these requests, please contact us at:
         </p>
-        <p>📩 ballerleaguefantasy@gmail.com</p>
+        <p className="flex gap-2 items-center">
+            <FaEnvelope color="#06FF8B"/>
+            ballerleaguefantasy@gmail.com
+        </p>
         <p>We aim to respond to all requests within 14 days.</p>
       </div>
 
