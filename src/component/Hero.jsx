@@ -6,6 +6,8 @@ import logoImage from "../assets/image/Logo.png";
 import backgroundImage from "../assets/image/stadium.jpg";
 import MarqueeBanner from "./MarqueeBanner";
 import StackedCards from "./StackedCards";
+import { Link } from "react-router-dom";
+
 
 
 const Hero = () => {
@@ -30,6 +32,11 @@ const Hero = () => {
         {/* Header */}
         <header className="flex justify-between items-center py-4 px-6">
           <img src={logoImage} alt="Fantasy Baller League Logo" className="h-10" />
+          <button>
+            <Link to="/createyourplayercard" className="bg-[#06FF8B] text-black text-sm md:text-lg py-2 px-4 rounded-md hover:bg-[#00FF7F] transition">
+              Create Player Card
+            </Link>
+          </button>
         </header>
 
         {/* Main Content */}
