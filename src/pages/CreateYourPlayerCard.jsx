@@ -60,9 +60,11 @@ const CreateYourPlayerCard = () => {
       </div>
 
       {/* CTA Button */}
-      <button className="mt-10 bg-[#06FF8B] text-black font-semibold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-white hover:text-[#06FF8B] transition">
-        Create Your Player Card <ArrowRight className="w-4 h-4" />
-      </button>
+        <Link to="/formpage">
+            <button className="mt-10 bg-[#06FF8B] text-black font-semibold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-white hover:text-[#06FF8B] transition">
+                Create Your Player Card <ArrowRight className="w-4 h-4" />
+            </button>
+        </Link>
     </section>
   );
 };
